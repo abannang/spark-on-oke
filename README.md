@@ -1,4 +1,6 @@
-# Spark example
+# Spark on OKE
+
+<<Disclaimer: This repo has been forked from https://github.com/kubernetes/examples/tree/master/staging/spark>>
 
 Following this example, you will create a functional [Apache
 Spark](http://spark.apache.org/) cluster using Kubernetes and
@@ -26,7 +28,7 @@ This example assumes
 - That you have the ```kubectl``` command line tool installed in your path and configured to talk to your Kubernetes cluster
 - That your Kubernetes cluster is running [kube-dns](https://github.com/kubernetes/dns) or an equivalent integration.
 
-Optionally, your Kubernetes cluster should be configured with a Loadbalancer integration (automatically configured via kube-up or GKE)
+Optionally, your Kubernetes cluster should be configured with a Loadbalancer integration (automatically configured via kube-up or OKE)
 
 ## Step One: Create namespace
 
@@ -363,11 +365,7 @@ Then visit [http://localhost:8080/](http://localhost:8080/).
 * Zeppelin may take some time (about a minute) on this pipeline the first time
   you run it. It seems to take considerable time to load.
 
-* On GKE, `kubectl port-forward` may not be stable over long periods of time. If
+* On OKE, `kubectl port-forward` may not be stable over long periods of time. If
   you see Zeppelin go into `Disconnected` state (there will be a red dot on the
   top right as well), the `port-forward` probably failed and needs to be
-  restarted. See #12179.
-
-<!-- BEGIN MUNGE: GENERATED_ANALYTICS -->
-[![Analytics](https://kubernetes-site.appspot.com/UA-36037335-10/GitHub/examples/staging/spark/README.md?pixel)]()
-<!-- END MUNGE: GENERATED_ANALYTICS -->
+  restarted.
